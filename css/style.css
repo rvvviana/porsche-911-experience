@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600;800;900&family=Pinyon+Script&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #050505;
+    color: #ffffff;
+    overflow-x: hidden;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* --- TEMA CLARO (LIGHT MODE) OVERRIDES --- */
+body.light-mode {
+    background-color: #f4f4f5; /* Zinc 100 */
+    color: #111111;
+}
+
+/* Garante que os parágrafos vermelhos não perdem a sua cor para o cinza padrão */
+body.light-mode p:not(.text-red-500):not(.hero-subtitle) { color: #3f3f46 !important; }
+
+body.light-mode .text-white { color: #111111 !important; }
+body.light-mode button.hover\:text-red-500:hover { color: #ef4444 !important; } /* Mantém o hover vermelho do ícone do tema */
+body.light-mode .nav-link:hover { color: #dc2626 !important; } /* Mantém o hover vermelho nos links do menu no modo claro */
+
+body.light-mode .text-white\/50 { color: rgba(17,17,17,0.5) !important; }
+body.light-mode .text-white\/40 { color: rgba(17,17,17,0.4) !important; }
+body.light-mode .text-white\/30 { color: rgba(17,17,17,0.3) !important; }
+body.light-mode .border-white\/10 { border-color: rgba(0,0,0,0.1) !important; }
+body.light-mode .bg-white { background-color: #111111 !important; }
+body.light-mode .bg-white\/30 { background-color: rgba(17,17,17,0.3) !important; }
+body.light-mode .bg-white\/5 { background-color: rgba(0,0,0,0.05) !important; }
+body.light-mode .hover\:bg-white\/20:hover { background-color: rgba(0,0,0,0.15) !important; }
+body.light-mode .hover\:text-white:hover { color: #111111 !important; }
+body.light-mode .bg-\[\#050505\] { background-color: #f4f4f5 !important; }
+body.light-mode .menu-bar { background-color: #111111; }
+
+body.light-mode .glass-panel, 
+body.light-mode .glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .glass-panel:hover, 
+body.light-mode .glass-card:hover {
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode .car-card {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .car-card:hover {
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .car-image-container {
+    background: radial-gradient(circle at center, #e4e4e7 0%, #a1a1aa 100%);
+}
+
+body.light-mode .bg-number {
+    background: linear-gradient(to top, rgba(244, 244, 245, 1) 15%, rgba(0, 0, 0, 0.15) 100%);
+    -webkit-background-clip: text;
+}
+
+body.light-mode #upload-screen { background-color: #f4f4f5; }
+body.light-mode .upload-btn { border-color: #111111; color: #111111; }
+body.light-mode .upload-btn:hover { background-color: #111111; color: #f4f4f5; }
+body.light-mode .rv-logo { color: #111111; }
+
+.image-fade-gradient {
+    background: linear-gradient(to top, rgba(15,15,15,0.95), rgba(15,15,15,0.3), transparent);
+}
+
+body.light-mode .image-fade-gradient {
+    background: linear-gradient(to top, rgba(244,244,245,0.95), rgba(244,244,245,0.3), transparent);
+}
+/* ------------------------------------------- */
+
+/* 911 BACKGROUND CONTAINER */
+#background-911 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1; 
+    pointer-events: none;
+    user-select: none;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-out;
+}
+
+.bg-number {
+    font-size: 28vw; 
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    background: linear-gradient(to top, rgba(5, 5, 5, 1) 15%, rgba(255, 255, 255, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0.85;
+    filter: blur(1px);
+}
+
+/* SUBTLE AMBIENT GLOW BEHIND PANELS */
+.glow-orb {
+    position: absolute;
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(circle, rgba(220, 38, 38, 0.04) 0%, rgba(0,0,0,0) 70%);
+    border-radius: 50%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+#webgl-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1; 
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+.content-layer {
+    position: relative;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 1.5s ease-in;
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5vw;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* MENU ICON STYLE */
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.menu-icon:hover {
+    opacity: 0.6;
+}
+
+.menu-bar {
+    width: 28px;
+    height: 2px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+}
+
+#main-header {
+    background-color: transparent;
+    height: 90px;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.glass-panel {
+    background: rgba(15, 15, 15, 0.8);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.9);
+    max-width: 580px; 
+    width: 100%;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    cursor: default;
+}
+
+.glass-panel:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.glass-card {
+    background: rgba(15, 15, 15, 0.8);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 3rem;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.9);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.glass-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-link {
+    transition: color 0.3s ease;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.nav-link:hover {
+    color: #dc2626 !important;
+}
+
+.hero-subtitle {
+    text-transform: uppercase;
+    letter-spacing: 1.2em;
+    font-size: clamp(0.5rem, 1vw, 0.7rem);
+    margin-bottom: 0.5rem;
+    color: #dc2626;
+    font-weight: 900;
+}
+
+h1 {
+    font-family: 'Edwardian Script ITC', 'Pinyon Script', cursive;
+    font-size: clamp(10rem, 28vw, 22rem); 
+    font-weight: 400;
+    line-height: 0.65;
+    letter-spacing: 0;
+    text-transform: none;
+    color: inherit;
+    text-shadow: 0 15px 60px rgba(0,0,0,0.9);
+    filter: drop-shadow(0 0 20px rgba(255,255,255,0.1));
+    white-space: nowrap;
+    z-index: 5;
+    margin-top: 0;
+}
+
+body.light-mode h1 {
+    text-shadow: 0 15px 60px rgba(0,0,0,0.1);
+    filter: drop-shadow(0 0 20px rgba(0,0,0,0.05));
+}
+
+h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    font-weight: 300;
+    line-height: 1.9;
+}
+
+.car-card {
+    background: rgba(20, 20, 20, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    cursor: pointer;
+}
+
+.car-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+}
+
+.car-image-container {
+    background: radial-gradient(circle at center, #333 0%, #111 100%);
+    aspect-ratio: 16/9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.car-image-container img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+}
+
+#upload-screen {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    background-color: #050505;
+    text-align: center;
+    padding: 20px;
+    transition: opacity 0.8s ease-out;
+}
+
+.upload-btn {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1.2rem 3.5rem;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.upload-btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.noise::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 50;
+}
+
+.rv-logo { color: white; }
