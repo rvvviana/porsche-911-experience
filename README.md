@@ -39,3 +39,7 @@ Three.js (WebGL 3D Engine para animação e renderização do carro)
 📝 Licença
 
 Projeto criado para fins educacionais e de portfólio. As marcas registadas e imagens da Porsche pertencem à Dr. Ing. h.c. F. Porsche AG.
+
+<img width="1903" height="945" alt="image" src="https://github.com/user-attachments/assets/b0359037-f2e7-44fe-b1d3-2f8740c34db3" />
+<img width="1904" height="949" alt="image" src="https://github.com/user-attachments/assets/8e865972-91d5-4554-a4af-051d56c159e1" />
+
