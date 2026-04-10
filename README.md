@@ -1,7 +1,5 @@
 Porsche 911 3D Experience 🏎️✨
 
-Bem-vindo ao repositório do Porsche 911 Experience, um showroom digital interativo e premium focado no icónico Porsche 911. Este projeto combina web design moderno, tipografia elegante e renderização 3D em tempo real para proporcionar uma experiência de utilizador imersiva.
-
 🌟 Funcionalidades
 
 Visualizador 3D Integrado: Renderização em tempo real de modelos 3D (.glb/.gltf) do Porsche 911 utilizando Three.js. O modelo reage ao scroll da página com animações e deslocamentos suaves.
@@ -37,25 +35,6 @@ Three.js (WebGL 3D Engine para animação e renderização do carro)
 │   └── main.js          # Lógica do Three.js, Scroll, Carrossel e Tema
 ├── assets/              # Pasta para imagens (.png, .avif) e modelos 3D (.glb)
 └── README.md            # Documentação do projeto
-
-
-🚀 Como Executar Localmente
-
-Clona este repositório para a tua máquina:
-
-git clone [https://github.com/TEU_USUARIO/porsche-911-experience.git](https://github.com/TEU_USUARIO/porsche-911-experience.git)
-
-
-Devido a políticas de segurança dos browsers (CORS) ao carregar modelos 3D, precisas de executar o projeto através de um servidor local.
-
-Se usares o VS Code, podes instalar a extensão Live Server e clicar em "Go Live".
-
-Em alternativa, usa Python no terminal:
-
-python -m http.server 8000
-
-
-O projeto estará disponível em http://localhost:8000 (ou no porto definido pelo Live Server).
 
 📝 Licença
 
