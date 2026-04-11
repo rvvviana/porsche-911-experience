@@ -49,3 +49,5 @@ An interactive web experience featuring a real-time 3D Porsche 911 Carrera 4S th
 ## License
 
 Built for educational and portfolio purposes. All Porsche trademarks and imagery belong to Dr. Ing. h.c. F. Porsche AG.
+
+https://github.com/user-attachments/assets/079e8f03-221e-4d64-b0ef-853ceb8a092e
