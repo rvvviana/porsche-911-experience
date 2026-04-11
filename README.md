@@ -49,3 +49,5 @@ Projeto criado para fins educacionais e de portfólio. As marcas registadas e im
 <img width="1903" height="945" alt="image" src="https://github.com/user-attachments/assets/b0359037-f2e7-44fe-b1d3-2f8740c34db3" />
 <img width="1904" height="949" alt="image" src="https://github.com/user-attachments/assets/8e865972-91d5-4554-a4af-051d56c159e1" />
 
+nescessário baixar o arquivo *free_porsche_911_carrera_4s.glb* localizada nos assets para que possa liberar o acesso ao site
+https://rvvviana.github.io/porsche-911-experience/
