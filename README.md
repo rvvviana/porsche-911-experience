@@ -20,7 +20,6 @@ Carrossel de Engenharia (Slider): Um slider responsivo construído do zero com J
 
 Tipografia "Watermark": Elementos textuais gigantes em background que se movem de forma parallax com o scroll do utilizador.
 
-Design Totalmente Responsivo: Layout adaptável para telemóveis, tablets e desktops (Mobile-First via Tailwind CSS).
 
 🛠️ Tecnologias Utilizadas
 
