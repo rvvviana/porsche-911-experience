@@ -1,52 +1,51 @@
+# Porsche 911 3D Experience 🏎️✨
 
+An interactive web experience featuring a real-time 3D Porsche 911 Carrera 4S that reacts to scroll, with dynamic lighting, theme switching, and an engineering showcase carousel — all running in the browser with no build step required.
 
-https://github.com/user-attachments/assets/b68d02f0-1180-46c8-9c41-9abf01ff5558
+## Demo
 
+🔗 **[Live site →](https://rvvviana.github.io/porsche-911-experience/)**
 
+> **⚠️ Required:** Download the `free_porsche_911_carrera_4s.glb` file and place it inside the `assets/` folder before opening the site locally — the 3D model is not bundled in the repository.
 
-Porsche 911 3D Experience 🏎️✨
+## Screenshots
 
-🌟 Funcionalidades
+![Dark Mode](https://github.com/user-attachments/assets/b0359037-f2e7-44fe-b1d3-2f8740c34db3)
+![Light Mode](https://github.com/user-attachments/assets/8e865972-91d5-4554-a4af-051d56c159e1)
 
-Visualizador 3D Integrado: Renderização em tempo real de modelos 3D (.glb/.gltf) do Porsche 911 utilizando Three.js. O modelo reage ao scroll da página com animações e deslocamentos suaves.
+## Features
 
-Modo Claro / Modo Escuro (Theme Toggle): Alternância fluida entre um ambiente de estúdio escuro (Dark Mode) e um ambiente claro e luminoso (Light Mode).
+**Real-Time 3D Viewer** — The Porsche 911 model (`.glb`/`.gltf`) is rendered via Three.js with WebGL. As the user scrolls, the car animates and repositions with smooth easing.
 
-Funcionalidade Avançada: A pintura do carro muda automaticamente para Prata/Branco no modo claro para combinar com a iluminação!
+**Dark / Light Theme Toggle** — Seamless switching between a dark studio environment and a bright, airy showroom. In Light Mode, the car's paint color automatically shifts to Silver/White to match the ambient lighting.
 
-Iluminação Dinâmica: Holofotes, luzes direcionais e luzes de ambiente calculadas para dar reflexos realistas à carroçaria do carro em ambos os temas.
+**Dynamic Lighting** — Spotlights, directional lights, and ambient fills are individually tuned for each theme to produce realistic reflections and highlights across the car body.
 
-Carrossel de Engenharia (Slider): Um slider responsivo construído do zero com JavaScript para exibir as peças vitais do carro (Motor, Performance, PDK).
+**Engineering Carousel** — A fully custom-built responsive slider (no library) showcasing key components: Engine, Performance, and PDK transmission.
 
-Tipografia "Watermark": Elementos textuais gigantes em background que se movem de forma parallax com o scroll do utilizador.
+**Parallax Watermark Typography** — Large background text elements that drift at different speeds as the user scrolls, adding visual depth to the layout.
 
+## Tech Stack
 
-🛠️ Tecnologias Utilizadas
+- **HTML5** — Semantic structure
+- **CSS3 / Tailwind CSS** — Utility-first styling, flexbox, grid, glassmorphism effects
+- **Vanilla JavaScript (ES6)** — Carousel logic, theme toggle, scroll event handling
+- **Three.js** — WebGL engine for 3D model loading, animation, and lighting
 
-HTML5 (Semântica estrutural)
+## File Structure
 
-CSS3 / Tailwind CSS (Estilização utilitária, flexbox, grid, glassmorphism)
-
-Vanilla JavaScript (ES6) (Lógica do carrossel, toggle de temas, eventos de scroll)
-
-Three.js (WebGL 3D Engine para animação e renderização do carro)
-
-📂 Estrutura de Ficheiros
-
-├── index.html           # Estrutura principal da página
+```
+├── index.html           # Main page structure
 ├── css/
-│   └── style.css        # Estilos personalizados e overrides do Light Mode
+│   └── style.css        # Custom styles and Light Mode overrides
 ├── js/
-│   └── main.js          # Lógica do Three.js, Scroll, Carrossel e Tema
-├── assets/              # Pasta para imagens (.png, .avif) e modelos 3D (.glb)
-└── README.md            # Documentação do projeto
+│   └── main.js          # Three.js setup, scroll logic, carousel, and theme switching
+├── assets/              # Images (.png, .avif) and 3D models (.glb) — see note below
+└── README.md
+```
 
-📝 Licença
+> The `assets/` folder is not included in this repository due to file size. Download the required `.glb` model separately and place it there before running locally.
 
-Projeto criado para fins educacionais e de portfólio. As marcas registadas e imagens da Porsche pertencem à Dr. Ing. h.c. F. Porsche AG.
+## License
 
-<img width="1903" height="945" alt="image" src="https://github.com/user-attachments/assets/b0359037-f2e7-44fe-b1d3-2f8740c34db3" />
-<img width="1904" height="949" alt="image" src="https://github.com/user-attachments/assets/8e865972-91d5-4554-a4af-051d56c159e1" />
-
-nescessário baixar o arquivo *free_porsche_911_carrera_4s.glb* localizada nos assets para que possa liberar o acesso ao site
-https://rvvviana.github.io/porsche-911-experience/
+Built for educational and portfolio purposes. All Porsche trademarks and imagery belong to Dr. Ing. h.c. F. Porsche AG.
