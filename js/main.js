@@ -29,7 +29,7 @@ scene.add(backLight);
 const carGroup = new THREE.Group();
 scene.add(carGroup);
 
-const fileInput = document.getElementById('file-input');
+
 const uploadScreen = document.getElementById('upload-screen');
 const webglContainer = document.getElementById('webgl-container');
 const contentLayer = document.querySelector('.content-layer');
@@ -108,53 +108,49 @@ themeToggleBtn.addEventListener('click', () => {
     applyThemeToCar(isLightMode);
 });
 
-fileInput.addEventListener('change', function(e) {
-    const file = e.target.files[0];
-    if (!file) return;
+const loader = new THREE.GLTFLoader();
+const modelPath = 'assets/free_porsche_911_carrera_4s.glb';
 
-    const reader = new FileReader();
-    reader.onload = function(event) {
-        const buffer = event.target.result;
-        const loader = new THREE.GLTFLoader();
-        loader.parse(buffer, '', function(gltf) {
-            const model = gltf.scene;
-            const box = new THREE.Box3().setFromObject(model);
-            const center = box.getCenter(new THREE.Vector3());
-            const size = box.getSize(new THREE.Vector3());
-            const maxDim = Math.max(size.x, size.y, size.z);
-            
-            const finalScale = baseScaleFactor / maxDim;
-            model.scale.set(finalScale, finalScale, finalScale);
-            
-            model.position.x = -center.x * finalScale;
-            model.position.y = -box.min.y * finalScale; 
-            model.position.z = -center.z * finalScale;
+loader.load(modelPath, function(gltf) {
+    const model = gltf.scene;
+    const box = new THREE.Box3().setFromObject(model);
+    const center = box.getCenter(new THREE.Vector3());
+    const size = box.getSize(new THREE.Vector3());
+    const maxDim = Math.max(size.x, size.y, size.z);
+    
+    const finalScale = baseScaleFactor / maxDim;
+    model.scale.set(finalScale, finalScale, finalScale);
+    
+    model.position.x = -center.x * finalScale;
+    model.position.y = -box.min.y * finalScale; 
+    model.position.z = -center.z * finalScale;
 
-            model.traverse((child) => {
-                if (child.isMesh) {
-                    child.castShadow = true;
-                    child.receiveShadow = true;
-                }
-            });
+    model.traverse((child) => {
+        if (child.isMesh) {
+            child.castShadow = true;
+            child.receiveShadow = true;
+        }
+    });
 
-            carGroup.add(model);
-            isModelLoaded = true;
-            
-            // Garante que o carro carregue na cor prata se o utilizador já estiver no Light Mode
-            applyThemeToCar(isLightMode);
-            
-            uploadScreen.style.opacity = '0';
-            setTimeout(() => {
-                uploadScreen.style.display = 'none';
-                webglContainer.style.opacity = '1';
-                contentLayer.style.opacity = '1';
-                mainHeader.style.opacity = '1';
-                bg911.style.opacity = '1';
-                checkSectionsVisibility();
-            }, 800);
-        });
-    };
-    reader.readAsArrayBuffer(file);
+    carGroup.add(model);
+    isModelLoaded = true;
+    
+    // Garante que o carro carregue na cor prata se o utilizador já estiver no Light Mode
+    applyThemeToCar(isLightMode);
+    
+    uploadScreen.style.opacity = '0';
+    setTimeout(() => {
+        uploadScreen.style.display = 'none';
+        webglContainer.style.opacity = '1';
+        contentLayer.style.opacity = '1';
+        mainHeader.style.opacity = '1';
+        bg911.style.opacity = '1';
+        checkSectionsVisibility();
+    }, 800);
+}, undefined, function(error) {
+    console.error('An error happened loading the model:', error);
+    const loadingText = document.getElementById('loading-text');
+    if (loadingText) loadingText.textContent = "Error loading 3D model.";
 });
 
 const floorGeo = new THREE.PlaneGeometry(200, 200);
