@@ -1,62 +1,53 @@
-Porsche 911 3D Experience 🏎️✨
+# Porsche 911 3D Experience 🏎️✨
 
-Bem-vindo ao repositório do Porsche 911 Experience, um showroom digital interativo e premium focado no icónico Porsche 911. Este projeto combina web design moderno, tipografia elegante e renderização 3D em tempo real para proporcionar uma experiência de utilizador imersiva.
+An interactive web experience featuring a real-time 3D Porsche 911 Carrera 4S that reacts to scroll, with dynamic lighting, theme switching, and an engineering showcase carousel — all running in the browser with no build step required.
 
-🌟 Funcionalidades
+## Demo
 
-Visualizador 3D Integrado: Renderização em tempo real de modelos 3D (.glb/.gltf) do Porsche 911 utilizando Three.js. O modelo reage ao scroll da página com animações e deslocamentos suaves.
+🔗 **[Live site →](https://rvvviana.github.io/porsche-911-experience/)**
 
-Modo Claro / Modo Escuro (Theme Toggle): Alternância fluida entre um ambiente de estúdio escuro (Dark Mode) e um ambiente claro e luminoso (Light Mode).
+> **⚠️ Required:** Download the `free_porsche_911_carrera_4s.glb` file and place it inside the `assets/` folder before opening the site locally — the 3D model is not bundled in the repository.
 
-Funcionalidade Avançada: A pintura do carro muda automaticamente para Prata/Branco no modo claro para combinar com a iluminação!
+## Screenshots
 
-Iluminação Dinâmica: Holofotes, luzes direcionais e luzes de ambiente calculadas para dar reflexos realistas à carroçaria do carro em ambos os temas.
+![Dark Mode](https://github.com/user-attachments/assets/b0359037-f2e7-44fe-b1d3-2f8740c34db3)
+![Light Mode](https://github.com/user-attachments/assets/8e865972-91d5-4554-a4af-051d56c159e1)
 
-Carrossel de Engenharia (Slider): Um slider responsivo construído do zero com JavaScript para exibir as peças vitais do carro (Motor, Performance, PDK).
+## Features
 
-Tipografia "Watermark": Elementos textuais gigantes em background que se movem de forma parallax com o scroll do utilizador.
+**Real-Time 3D Viewer** — The Porsche 911 model (`.glb`/`.gltf`) is rendered via Three.js with WebGL. As the user scrolls, the car animates and repositions with smooth easing.
 
-Design Totalmente Responsivo: Layout adaptável para telemóveis, tablets e desktops (Mobile-First via Tailwind CSS).
+**Dark / Light Theme Toggle** — Seamless switching between a dark studio environment and a bright, airy showroom. In Light Mode, the car's paint color automatically shifts to Silver/White to match the ambient lighting.
 
-🛠️ Tecnologias Utilizadas
+**Dynamic Lighting** — Spotlights, directional lights, and ambient fills are individually tuned for each theme to produce realistic reflections and highlights across the car body.
 
-HTML5 (Semântica estrutural)
+**Engineering Carousel** — A fully custom-built responsive slider (no library) showcasing key components: Engine, Performance, and PDK transmission.
 
-CSS3 / Tailwind CSS (Estilização utilitária, flexbox, grid, glassmorphism)
+**Parallax Watermark Typography** — Large background text elements that drift at different speeds as the user scrolls, adding visual depth to the layout.
 
-Vanilla JavaScript (ES6) (Lógica do carrossel, toggle de temas, eventos de scroll)
+## Tech Stack
 
-Three.js (WebGL 3D Engine para animação e renderização do carro)
+- **HTML5** — Semantic structure
+- **CSS3 / Tailwind CSS** — Utility-first styling, flexbox, grid, glassmorphism effects
+- **Vanilla JavaScript (ES6)** — Carousel logic, theme toggle, scroll event handling
+- **Three.js** — WebGL engine for 3D model loading, animation, and lighting
 
-📂 Estrutura de Ficheiros
+## File Structure
 
-├── index.html           # Estrutura principal da página
+```
+├── index.html           # Main page structure
 ├── css/
-│   └── style.css        # Estilos personalizados e overrides do Light Mode
+│   └── style.css        # Custom styles and Light Mode overrides
 ├── js/
-│   └── main.js          # Lógica do Three.js, Scroll, Carrossel e Tema
-├── assets/              # Pasta para imagens (.png, .avif) e modelos 3D (.glb)
-└── README.md            # Documentação do projeto
+│   └── main.js          # Three.js setup, scroll logic, carousel, and theme switching
+├── assets/              # Images (.png, .avif) and 3D models (.glb) — see note below
+└── README.md
+```
 
+> The `assets/` folder is not included in this repository due to file size. Download the required `.glb` model separately and place it there before running locally.
 
-🚀 Como Executar Localmente
+## License
 
-Clona este repositório para a tua máquina:
+Built for educational and portfolio purposes. All Porsche trademarks and imagery belong to Dr. Ing. h.c. F. Porsche AG.
 
-git clone [https://github.com/TEU_USUARIO/porsche-911-experience.git](https://github.com/TEU_USUARIO/porsche-911-experience.git)
-
-
-Devido a políticas de segurança dos browsers (CORS) ao carregar modelos 3D, precisas de executar o projeto através de um servidor local.
-
-Se usares o VS Code, podes instalar a extensão Live Server e clicar em "Go Live".
-
-Em alternativa, usa Python no terminal:
-
-python -m http.server 8000
-
-
-O projeto estará disponível em http://localhost:8000 (ou no porto definido pelo Live Server).
-
-📝 Licença
-
-Projeto criado para fins educacionais e de portfólio. As marcas registadas e imagens da Porsche pertencem à Dr. Ing. h.c. F. Porsche AG.
+https://github.com/user-attachments/assets/079e8f03-221e-4d64-b0ef-853ceb8a092e
