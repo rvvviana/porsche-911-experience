@@ -6,7 +6,6 @@ An interactive web experience featuring a real-time 3D Porsche 911 Carrera 4S th
 
 🔗 **[Live site →](https://rvvviana.github.io/porsche-911-experience/)**
 
-> **⚠️ Required:** Download the `free_porsche_911_carrera_4s.glb` file and place it inside the `assets/` folder before opening the site locally — the 3D model is not bundled in the repository.
 
 ## Screenshots
 
